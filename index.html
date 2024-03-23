@@ -1,0 +1,253 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <style>
+   .photos{
+    margin-top:20px;
+    background-image:url('imgs/ab7.jpg');
+    height:500px; 
+    width: 100%;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    }
+   .photos h1{
+    font-size:45px; 
+    font-weight:600; 
+    color:black;
+    margin-top:190px;
+	padding-left:45px;
+    }
+	.photos span{
+	padding-left:30px;
+	color:#ff8c00;
+	}
+    .news-section {
+      padding: 50px 0;
+    }
+    .chat-board {
+      background-color: #f0f0f0;
+      padding: 50px 0;
+    }
+    .career-page {
+      padding: 50px 0;
+    }
+    .book-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom:
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .book-title {
+    font-weight: bold;
+    }
+    .book-quantity {
+      color: green;
+    }
+	 .job-card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+	
+</style>
+</head>
+<body>
+ 
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#home">Bookstore</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#events">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#news">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#chartBoard">Chat Board</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#career-page">Career</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+<section id="home" >
+<div class="container">
+<div class="photos">
+<div class="row text center">
+<div class="col-1g-12">
+<div>
+<h1>FOR ALL YOUR <br>
+<span> READING NEEDS</span>
+</h1>
+</div>
+</div> 
+</div>
+</div>
+</div>
+</section>
+<!-- Latest News Section -->
+  <section id="news" class="news-section">
+    <div class="container">
+      <h2 class="text-center">Latest News</h2><br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">New Book Arrivals</h5>
+              <p class="card-text">March 20,2024</p>
+			  <p>New books are shelved on the “New Arrivals” shelves for a limited amount of time in order.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Upcoming Author Event</h5>
+              <p class="card-text">March 25,2024</p>
+			  <p>Learning how to write a press release for a book launch doesn’t have to be complicated.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+ <section id="events" class="events-section">
+  <div class="container">
+  <h2 class="text-center">Bookstore Event Photo Gallery</h2><br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="imgs/b1.jpg" class="card-img-top" alt="Event 1">
+        <div class="card-body">
+          <h5 class="card-title">Book Insider Club</h5>
+          <p class="card-text">We want to work with engaged, genuinely enthusiastic mystery.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="imgs/b3.jpg" class="card-img-top" alt="Event 2" style="height:230px;">
+        <div class="card-body">
+          <h5 class="card-title">Your Truth Bookstore</h5>
+          <p class="card-text">“Yours truly” is standard sign-off that you can writeto end an email.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="imgs/b4.jpg" class="card-img-top" alt="Event 3">
+        <div class="card-body">
+          <h5 class="card-title">Biggest Book Sale</h5>
+          <p class="card-text">This report forecasts revenue growth at global, regional & country levels </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+ 
+
+ <div class="container">
+    <h2 class="text-center mt-4">Bookstore Chart Board</h2><br>
+    <div class="row" id="chartBoard">
+     </div>
+  </div>
+
+  <script>
+    const books = [
+      { title: "The Great Gatsby", quantity: 80 },
+      { title: "To Kill a Mockingbird", quantity: 75 },
+      { title: "Bookworm's Delight", quantity: 50 }
+    ];
+
+    function renderBookCards() {
+      const chartBoard = document.getElementById('chartBoard');
+      chartBoard.innerHTML = ''; // Clear existing content
+
+      books.forEach((book, index) => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-4');
+        card.innerHTML = `
+          <div class="book-card">
+            <p class="book-title">${book.title}</p>
+            <p class="book-quantity">Quantity: <span id="quantity${index}">${book.quantity}</span></p>
+            <button class="btn btn-warning link" onclick="updateQuantity(${index}, ${book.quantity + 1})">Increment Quantity</button>
+          </div>
+        `;
+        chartBoard.appendChild(card);
+      });
+    }
+
+    // Function to update quantity
+    function updateQuantity(index, newQuantity) {
+      books[index].quantity = newQuantity;
+      renderBookCards(); // Re-render book cards after updating quantity
+    }
+
+    // Initial rendering of book cards
+    renderBookCards();
+  </script>
+
+   <div class="container">
+    <h2 class="text-center mt-4">Join Our Team!</h2>
+    <p class="text-center">Fill out the form below to apply for a position.</p>
+    
+    <form id="careerForm">
+      <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input type="text" class="form-control" id="fullName" name="fullName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="position">Position of Interest:</label>
+        <select class="form-control" id="position" name="position" required>
+          <option value="">Select</option>
+          <option value="Bookseller">Bookseller</option>
+          <option value="Store Manager">Store Manager</option>
+		  <option value="Bookstore Assistant">Bookstore Assistant</option>
+          <option value="Inventory Manager">Inventory Manager</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-warning link btn-block">Submit Application</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("careerForm").addEventListener("submit", function(event) {
+      var fullName = document.getElementById("fullName").value;
+      var email = document.getElementById("email").value;
+      var position = document.getElementById("position").value;
+
+ 
+      if (fullName === "" || email === "" || position === "") {
+        alert("Please fill out all fields.");
+        event.preventDefault();
+      } else {
+        alert("Thank you, " + fullName + "! Your application for the position of " + position + " has been submitted successfully.");
+      }
+    });
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+  </html>
